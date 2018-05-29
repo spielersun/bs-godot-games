@@ -2,15 +2,18 @@
 
 ## bilgisayamiyorum.com 
 
-this mini games are created with godot3
+these mini games are created with godot3
 
 <ul>
 <li>number guesser</li>
 <li>tree puncher</li>
 </ul>
+___
 
 *GODOT GAME ENGINE: https://godotengine.org/*
+
 *Udemy Godot Course: https://www.udemy.com/godotcourse/*
+___
 
 #### Contents will be placed on: 
 
