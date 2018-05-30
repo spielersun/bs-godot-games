@@ -1,23 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/trunk_mid.png" type="Texture" id=1]
-[ext_resource path="res://sprites/axe_iron.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Trunk.gd" type="Script" id=1]
+[ext_resource path="res://sprites/trunk_mid.png" type="Texture" id=2]
+[ext_resource path="res://sprites/axe_iron.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 51.835
 
-[node name="Trunk" type="Node2D" index="0"]
+[node name="Trunk" type="Node2D"]
+
+scale = Vector2( 2, 2 )
+z_index = -2
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 z_index = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Left_Axe" type="Area2D" parent="." index="1"]
+[node name="Left_Axe" type="Area2D" parent="." index="1" groups=[
+"Axes",
+]]
 
+editor/display_folded = true
 position = Vector2( -83, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -32,15 +41,18 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Left_Axe" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Axe" index="1"]
 
 position = Vector2( 4.13596, -1.75267 )
 shape = SubResource( 1 )
 
-[node name="Right_Axe" type="Area2D" parent="." index="2"]
+[node name="Right_Axe" type="Area2D" parent="." index="2" groups=[
+"Axes",
+]]
 
+editor/display_folded = true
 position = Vector2( 83, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -55,7 +67,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Right_Axe" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
@@ -63,5 +75,14 @@ _sections_unfolded = [ "Offset" ]
 
 position = Vector2( 4.13596, -1.75267 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
