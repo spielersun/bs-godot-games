@@ -4,7 +4,7 @@ export var speed = 450
 export var damage = 10
 
 func _ready():
-	connect("area_entered", self, "_on_area_entered")
+	connect("body_entered", self, "_on_body_entered")
 
 func _process(delta):
 	position.y += speed * delta
@@ -12,7 +12,7 @@ func _process(delta):
 	if position.y > 2000:
 		queue_free()
 		
-func _on_area_entered(area):
+func _on_body_entered(area):
 	if area.name == "player":
 		area.add_damage(damage)
 		queue_free()
