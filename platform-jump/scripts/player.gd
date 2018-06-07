@@ -5,6 +5,9 @@ onready var animated_sprite = $AnimatedSprite
 const GRAVITY = 1500
 const GRAVITY_INCREMENT = 2500 
 const JUMP_DECREMENT = 100
+const JUMP_FORCE = 40
+
+export var speed = 500
 
 var screen_width
 var half_sprite_width
@@ -32,6 +35,16 @@ func _process(delta):
 		position.x += speed * delta
 	elif Input.is_action_pressed("ui_accept"):
 		jump()
+
+func jump():
+	if jumping:
+		return
+	
+	current_gravity = 0
+	jumping = true
+	current_jump_force = JUMP_FORCE
+	
+	animated_sprite.play("jump")
 
 func _increment_gravity(delta):
 	current_gravity += GRAVITY_INCREMENT * delta

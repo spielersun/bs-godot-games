@@ -1,5 +1,28 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="game" type="Node" index="0"]
+[ext_resource path="res://scenes/grass_platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+
+[node name="game" type="Node"]
+
+[node name="grass_platform" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 176.347, 1115.5 )
+
+[node name="grass_platform2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 393.705, 877.634 )
+
+[node name="grass_platform3" parent="." index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 299.38, 594.658 )
+
+[node name="grass_platform4" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 424.463, 291.178 )
+
+[node name="player" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 176.347, 924.796 )
 
 
