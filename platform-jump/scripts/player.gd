@@ -57,6 +57,14 @@ func jump():
 	animated_sprite.play("jump")
 	emit_signal("just_jumped")
 
+func add_impulse(impulse):
+	emit_signal("just_jumped")
+	
+	current_gravity = 0
+	jumping = true
+	current_jump_force = impulse
+	animated_sprite.play("jump")
+
 func die():
 	get_tree().reload_current_scene()
 

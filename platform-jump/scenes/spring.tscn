@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/spring.gd" type="Script" id=1]
+[ext_resource path="res://items/spring.png" type="Texture" id=2]
+[ext_resource path="res://items/spring_in.png" type="Texture" id=3]
+[ext_resource path="res://items/spring_out.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 74.8654, 38.075 )
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "spring",
+"speed": 10.0
+} ]
+
+[node name="spring" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+impulse = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 2 )
+
+[node name="animation" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 1 )
+animation = "idle"
+
+
