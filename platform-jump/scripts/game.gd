@@ -1,10 +1,12 @@
 extends Node
 
 export(Array) var platforms 
+export(Array) var special_platforms
 
 const MIN_INTERVAL = 100
 const MAX_INTERVAL = 250
 const INITIAL_PLATFORMS_COUNT = 40
+const SPECIAL_PLATFORM_CHANCE = 20
 
 var current_max_interval
 var current_min_interval
@@ -27,10 +29,14 @@ func _spawn_platform():
 	var index 
 	var new_platform
 	
-	index = rand_range(0, platforms.size())
-	new_platform = platforms[index].instance()
-	add_child(new_platform)
+	if rand_range(0,100) > 100 - SPECIAL_PLATFORM_CHANCE:
+		index = rand_range(0, special_platforms.size())
+		new_platform = special_platforms[index].instance()
+	else:
+		index = rand_range(0, platforms.size())
+		new_platform = platforms[index].instance()
 	
+	add_child(new_platform)
 	var spawn_x = rand_range(0 + new_platform.sprite_half_width, screen_size - new_platform.sprite_half_width)
 	var spawn_pos = Vector2(spawn_x, last_spawn_height)
 	new_platform.position = spawn_pos

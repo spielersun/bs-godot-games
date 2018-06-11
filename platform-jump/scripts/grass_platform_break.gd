@@ -2,6 +2,7 @@ extends Area2D
 
 onready var sprite = $Sprite
 onready var collision = $collision
+onready var particles = $particles
 
 var sprite_half_width
 
@@ -15,3 +16,4 @@ func _on_body_entered(body):
 			body.jump()
 			sprite.queue_free()
 			collision.queue_free()
+			particles.emitting = true
