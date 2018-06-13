@@ -1,37 +1,111 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/grass_platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/grass_platform_small.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/grass_platform_break.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/moving_grass_platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://background/bg_layer1.png" type="Texture" id=6]
+[ext_resource path="res://background/bg_layer2.png" type="Texture" id=7]
+[ext_resource path="res://background/bg_layer3.png" type="Texture" id=8]
+[ext_resource path="res://background/bg_layer4.png" type="Texture" id=9]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fonts/dylan_test.tres" type="DynamicFont" id=11]
 
-[node name="game" type="Node"]
+[node name="game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 platforms = [ ExtResource( 2 ), ExtResource( 3 ) ]
 special_platforms = [ ExtResource( 4 ), ExtResource( 5 ) ]
 
-[node name="grass_platform" parent="." index="0" instance=ExtResource( 2 )]
+[node name="background" type="CanvasLayer" parent="." index="0"]
+
+editor/display_folded = true
+layer = -5
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="background" index="0"]
+
+position = Vector2( 324.13, 540.443 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="background" index="1"]
+
+position = Vector2( 330.789, 554.42 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="background" index="2"]
+
+position = Vector2( 340.107, 549.761 )
+texture = ExtResource( 8 )
+
+[node name="Sprite4" type="Sprite" parent="background" index="3"]
+
+position = Vector2( 326.13, 545.102 )
+texture = ExtResource( 9 )
+
+[node name="grass_platform" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 176.347, 1115.5 )
 
-[node name="grass_platform2" parent="." index="1" instance=ExtResource( 2 )]
+[node name="grass_platform2" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 393.705, 877.634 )
 
-[node name="grass_platform3" parent="." index="2" instance=ExtResource( 2 )]
+[node name="grass_platform3" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 299.38, 594.658 )
 
-[node name="grass_platform4" parent="." index="3" instance=ExtResource( 2 )]
+[node name="grass_platform4" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 424.463, 291.178 )
 
-[node name="player" parent="." index="4" instance=ExtResource( 6 )]
+[node name="player" parent="." index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 176.347, 924.796 )
+
+[node name="UI" type="CanvasLayer" parent="." index="6"]
+
+editor/display_folded = true
+layer = 5
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="score" type="RichTextLabel" parent="UI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 34.0
+margin_right = 663.0
+margin_bottom = 185.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 11 )
+custom_colors/default_color = Color( 0.984375, 0.107666, 0.539171, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "999"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [connection signal="just_jumped" from="player" to="." method="_on_player_just_jumped"]
 

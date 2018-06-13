@@ -17,10 +17,12 @@ var current_jump_force = 0
 var current_gravity = 0
 var highest_reached_pos = 300
 var death_pos_offset = 1200
+var score = 0
 
 signal just_jumped
 
 func _ready():
+	score = int(abs(highest_reached_pos) - 300)
 	screen_width = get_viewport_rect().size.x
 	half_sprite_width = animated_sprite.frames.get_frame("idle", 0).get_width() / 2
 	current_gravity = GRAVITY
@@ -34,6 +36,9 @@ func _process(delta):
 		_decrement_gravity(delta)
 	
 	highest_reached_pos = position.y if position.y < highest_reached_pos else highest_reached_pos
+	score = int(abs(highest_reached_pos) - 300)
+	score = score if score > 0 else 0
+	
 	if position.y >= highest_reached_pos + death_pos_offset:
 		die()
 	

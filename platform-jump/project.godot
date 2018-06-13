@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="platform-jump"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+level_manager="*res://scripts/level_manager.gd"
 
 [display]
 
