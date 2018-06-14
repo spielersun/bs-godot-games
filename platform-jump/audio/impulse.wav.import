@@ -7,10 +7,7 @@ path="res://.import/impulse.wav-9bb928a62569726a8fd754deae15bc10.sample"
 [deps]
 
 source_file="res://audio/impulse.wav"
-source_md5="6dc8915d6b4409fbf73ed894c368c0ad"
-
 dest_files=[ "res://.import/impulse.wav-9bb928a62569726a8fd754deae15bc10.sample" ]
-dest_md5="914121164c400223ecd98fd369288ed9"
 
 [params]
 

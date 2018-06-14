@@ -25,4 +25,10 @@ texture = ExtResource( 2 )
 build_mode = 0
 polygon = PoolVector2Array( -87.4783, -51.976, 87.3528, -53.1735, 104.117, -37.0076, 100.525, -17.848, 75.3781, 49.2105, -78.4973, 39.6307, -102.447, -29.224 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
 

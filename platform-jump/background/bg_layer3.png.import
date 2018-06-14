@@ -7,10 +7,7 @@ path="res://.import/bg_layer3.png-2f078cbefafadfc667a49ab2d19ed472.stex"
 [deps]
 
 source_file="res://background/bg_layer3.png"
-source_md5="3fbffab046f81a823be3cb9c66fe3ac3"
-
 dest_files=[ "res://.import/bg_layer3.png-2f078cbefafadfc667a49ab2d19ed472.stex" ]
-dest_md5="90cede382d11268bba55f78656142be8"
 
 [params]
 

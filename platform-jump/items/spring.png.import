@@ -7,10 +7,7 @@ path="res://.import/spring.png-a51d0c830bef217ee80feee3eccfb04b.stex"
 [deps]
 
 source_file="res://items/spring.png"
-source_md5="bf0b2b257993ffe85086a35ca39872c8"
-
 dest_files=[ "res://.import/spring.png-a51d0c830bef217ee80feee3eccfb04b.stex" ]
-dest_md5="ebeee5842a95b46822c40db4096d103e"
 
 [params]
 

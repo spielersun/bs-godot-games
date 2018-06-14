@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/normal_platform.gd" type="Script" id=1]
 [ext_resource path="res://platforms/ground_grass.png" type="Texture" id=2]
 
-[node name="grass_platform" type="Area2D"]
+[node name="grass_platform" type="Area2D" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = true
@@ -24,5 +24,11 @@ texture = ExtResource( 2 )
 
 build_mode = 0
 polygon = PoolVector2Array( -170.156, -48.9493, 170.062, -48.0691, 187.667, -41.0271, 191.188, -12.4188, 159.499, 35.1149, -161.354, 46.9983, -193.483, -21.2214, -186.441, -43.6678 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 

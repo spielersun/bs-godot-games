@@ -7,10 +7,7 @@ path="res://.import/destroy.wav-5fe5d8a50b438eb81639c8c02ae0508f.sample"
 [deps]
 
 source_file="res://audio/destroy.wav"
-source_md5="8de9584eae3b22a2438311145a78589a"
-
 dest_files=[ "res://.import/destroy.wav-5fe5d8a50b438eb81639c8c02ae0508f.sample" ]
-dest_md5="1529f59ef990da2c5539a35f4d74e95e"
 
 [params]
 

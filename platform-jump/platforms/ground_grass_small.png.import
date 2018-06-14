@@ -7,10 +7,7 @@ path="res://.import/ground_grass_small.png-39de03cde9aae4557173d2400f63fb8f.stex
 [deps]
 
 source_file="res://platforms/ground_grass_small.png"
-source_md5="916c2660f1a8332a760077e7a25e6a38"
-
 dest_files=[ "res://.import/ground_grass_small.png-39de03cde9aae4557173d2400f63fb8f.stex" ]
-dest_md5="bb1836a833801822a79031f8562b25ca"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/bunny1_jump.png-c326be2d4c52188cec4bb9af864e9939.stex"
 [deps]
 
 source_file="res://player/bunny1_jump.png"
-source_md5="bd2516f3ec38a2b89d92e57419d2c667"
-
 dest_files=[ "res://.import/bunny1_jump.png-c326be2d4c52188cec4bb9af864e9939.stex" ]
-dest_md5="7ee997aa82fe904c1f8fff57ff231634"
 
 [params]
 

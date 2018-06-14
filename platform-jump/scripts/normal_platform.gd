@@ -21,3 +21,7 @@ func _on_body_entered(body):
 	if body.name == "player":
 		if body.position.y < position.y:
 			body.jump()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

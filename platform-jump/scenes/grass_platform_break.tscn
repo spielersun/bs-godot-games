@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/grass_platform_break.gd" type="Script" id=1]
 [ext_resource path="res://platforms/ground_grass_broken.png" type="Texture" id=2]
 [ext_resource path="res://particle_brown.png" type="Texture" id=3]
+[ext_resource path="res://audio/destroy.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -49,7 +50,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Emission Shape", "Gravity" ]
 
-[node name="grass_platform_break" type="Area2D"]
+[node name="grass_platform_break" type="Area2D" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = true
@@ -91,5 +92,22 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="3"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="audio" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 

@@ -7,10 +7,7 @@ path="res://.import/spike_bottom.png-12522dddf0dd8e53d82472d458feaf40.stex"
 [deps]
 
 source_file="res://platforms/spike_bottom.png"
-source_md5="4a1cc490238f5192676e6c74b755715d"
-
 dest_files=[ "res://.import/spike_bottom.png-12522dddf0dd8e53d82472d458feaf40.stex" ]
-dest_md5="acef1bea2cc3d5447b86f4fd53ba6284"
 
 [params]
 
