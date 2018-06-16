@@ -5,8 +5,11 @@
 these mini games are created with godot3
 
 <ul>
-<li>number guesser</li>
-<li>tree puncher</li>
+<li>Number Guesser - Text</li>
+<li>Tree Puncher - 2D</li>
+<li>Space Attack - 2D</li>
+<li>Platform Jumper - 2D</li>
+<li>Hammer Time - 3D</li>
 </ul>
 ___
 
