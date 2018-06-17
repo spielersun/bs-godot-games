@@ -1,15 +1,118 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/hammer.gd" type="Script" id=1]
 [ext_resource path="res://models/hammer/hammer.obj" type="ArrayMesh" id=2]
 
-[sub_resource type="ConvexPolygonShape" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.191406, 0.191406, 0.191406, 1 )
+metallic = 0.0
+metallic_specular = 0.0
+metallic_texture_channel = 0
+roughness = 0.8
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Metallic", "Roughness" ]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.53125, 0.385857, 0.0415039, 1 )
+metallic = 0.0
+metallic_specular = 0.0
+metallic_texture_channel = 0
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Metallic", "Roughness" ]
+
+[sub_resource type="ConvexPolygonShape" id=3]
 
 points = PoolVector3Array( 0, 7.5, 1.5, 0, 7.69531, 0, 0.642578, 7.26563, 1.5, 0.768066, 7.41406, 0, 0.984375, 6.67188, 1.5, 1.17676, 6.70703, 0, 0.865723, 6, 1.5, 1.03516, 5.89844, 0, 0.341797, 5.55859, 1.5, 0.408691, 5.375, 0, -0.341797, 5.55859, 1.5, -0.408691, 5.375, 0, -0.865723, 6, 1.5, -1.03516, 5.89844, 0, -0.984375, 6.67188, 1.5, -1.17676, 6.70703, 0, -0.642578, 7.26563, 1.5, -0.768066, 7.41406, 0, 0.642578, 7.26563, -1.5, 0, 7.5, -1.5, 0.984375, 6.67188, -1.5, 0.865723, 6, -1.5, 0.341797, 5.55859, -1.5, -0.341797, 5.55859, -1.5, -0.865723, 6, -1.5, -0.984375, 6.67188, -1.5, -0.642578, 7.26563, -1.5, 0, 5.76953, -0.305664, 0, 3.65625, -0.532227, 0.191772, 5.76953, -0.23584, 0.342041, 3.65625, -0.407959, 0.293701, 5.76953, -0.0591125, 0.523926, 3.65625, -0.0926514, 0.258301, 5.76953, 0.141846, 0.460938, 3.65625, 0.265869, 0.102051, 5.76953, 0.272949, 0.182007, 3.65625, 0.499756, -0.102051, 5.76953, 0.272949, -0.182007, 3.65625, 0.499756, -0.258301, 5.76953, 0.141846, -0.460938, 3.65625, 0.265869, -0.293701, 5.76953, -0.0591125, -0.523926, 3.65625, -0.0926514, -0.191772, 5.76953, -0.23584, -0.342041, 3.65625, -0.407959, 0.347168, 0, -0.413818, 0, 0, -0.540039, 0.532227, 0, -0.093811, 0.468018, 0, 0.27002, 0.184814, 0, 0.507813, -0.184814, 0, 0.507813, -0.468018, 0, 0.27002, -0.532227, 0, -0.093811, -0.347168, 0, -0.413818, -0.422852, 0.606934, -0.5, 0, 0.606934, -0.654297, -0.282715, 1.45313, -0.339844, 0, 1.45313, -0.442871, -0.647461, 0.606934, -0.110657, -0.433105, 1.45313, -0.0794067, -0.569336, 0.606934, 0.332275, -0.380859, 1.45313, 0.216797, -0.224976, 0.606934, 0.621582, -0.150391, 1.45313, 0.410156, 0.224976, 0.606934, 0.621582, 0.150391, 1.45313, 0.410156, 0.569336, 0.606934, 0.332275, 0.380859, 1.45313, 0.216797, 0.647461, 0.606934, -0.110657, 0.433105, 1.45313, -0.0794067, 0.422852, 0.606934, -0.5, 0.282715, 1.45313, -0.339844 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "hit"
 length = 0.3
 loop = false
 step = 0.1
@@ -65,13 +168,13 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = null
-material/1 = null
-_sections_unfolded = [ "Transform" ]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 disabled = false
 
 [node name="animation" type="AnimationPlayer" parent="." index="2"]
@@ -81,7 +184,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/hit = SubResource( 2 )
+anims/hit = SubResource( 4 )
 blend_times = [  ]
 
 
