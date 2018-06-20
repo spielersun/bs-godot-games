@@ -2,6 +2,8 @@ extends Area
 
 onready var animation = $animation
 
+signal nail_hit
+
 func _ready():
 	connect("area_entered", self, "_on_area_entered")
 	pass
@@ -16,4 +18,5 @@ func _input(event):
 		animation.play("hit")
 
 func _on_area_entered(area):
-	pass
+	if area.is_in_group("Nails"):
+		emit_signal("nail_hit")

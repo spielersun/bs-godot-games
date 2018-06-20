@@ -78,7 +78,9 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, -1, 0 ) ]
 }
 
-[node name="Nail" type="Area" index="0"]
+[node name="Nail" type="Area" index="0" groups=[
+"Nails",
+]]
 
 input_ray_pickable = false
 input_capture_on_drag = false

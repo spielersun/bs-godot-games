@@ -9,7 +9,6 @@ points = PoolVector3Array( 0, 0.278076, 1.1543, 0, 0.278076, 1.25, -10, 0.278076
 
 [node name="plank" type="Area" index="0"]
 
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -32,10 +31,12 @@ reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+is_first = false
 speed = 5
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -52,7 +53,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 
