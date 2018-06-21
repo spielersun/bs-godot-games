@@ -112,6 +112,8 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_fonts" ]
 
+[connection signal="game_end" from="hammer" to="." method="_on_hammer_game_end"]
+
 [connection signal="nail_hit" from="hammer" to="." method="_on_hammer_nail_hit"]
 
 

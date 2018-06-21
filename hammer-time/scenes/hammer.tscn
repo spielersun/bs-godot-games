@@ -128,6 +128,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 30, 0, 0 ), Vector3( 90, 0, 0 ), Vector3( 30, 0, 0 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "check_nail_hit"
+} ]
+}
 
 [node name="hammer" type="Area" index="0"]
 
