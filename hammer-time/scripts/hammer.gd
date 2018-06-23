@@ -20,9 +20,10 @@ func _on_area_entered(area):
 		if area.already_hit:
 			emit_signal("game_end")
 			return
-		else:
-			is_nail_hit = true
-			emit_signal("nail_hit")
+			
+		is_nail_hit = true
+		area.already_hit = true
+		emit_signal("nail_hit")
 		
 func check_nail_hit():
 	if !is_nail_hit:
