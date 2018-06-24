@@ -1,9 +1,11 @@
 extends Area
 
 const NAIL_PATH = "res://scenes/nail.tscn"
+const BOMB_PATH = "res://scenes/bomb.tscn"
 
 const MIN_SPAWN_INTERVAL = 5
 const MAX_SPAWN_INTERVAL = 7.5
+const BOMB_SPAWN_CHANCE = 15
 
 export var is_first = false
 export var speed = 5
@@ -39,8 +41,12 @@ func spawn_nails_and_bombs():
 		if last_spawn_position < -50:
 			last_spawn_position = -50
 		
-		new_item = load(NAIL_PATH).instance()
-		new_item_translation = Vector3(last_spawn_position, 0.5, 1.5)
+		if rand_range(0, 100) > 100 - BOMB_SPAWN_CHANCE:
+			new_item = load(BOMB_PATH).intance()
+			new_item_translation = Vector3(last_spawn_position, 0.5, 1.5)
+		else:
+			new_item = load(NAIL_PATH).instance()
+			new_item_translation = Vector3(last_spawn_position, 1.5, 1)
 		
 		add_child(new_item)
 		new_item.translation = new_item_translation

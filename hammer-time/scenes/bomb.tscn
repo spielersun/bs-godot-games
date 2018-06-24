@@ -1,0 +1,290 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://models/bomb/bomb.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.195313, 0.195313, 0.195313, 1 )
+metallic = 0.0
+metallic_specular = 0.1
+metallic_texture_channel = 0
+roughness = 0.8
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Metallic", "Roughness" ]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 0.0
+metallic_specular = 0.0
+metallic_texture_channel = 0
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Metallic", "Roughness" ]
+
+[sub_resource type="ConvexPolygonShape" id=3]
+
+points = PoolVector3Array( 0, -0.195068, -0.980469, 0, -0.382568, -0.923828, 0.490234, -0.195068, -0.849121, 0.461914, -0.382568, -0.799805, 0, 0.923828, -0.382568, 0, 0.831055, -0.555176, 0.191284, 0.923828, -0.331299, 0.277588, 0.831055, -0.480957, 0, -0.555176, -0.831055, 0.415527, -0.555176, -0.719727, 0, 0.707031, -0.707031, 0.353516, 0.707031, -0.612305, 0, -0.707031, -0.707031, 0.353516, -0.707031, -0.612305, 0, 0.555176, -0.831055, 0.415527, 0.555176, -0.719727, 0, -0.831055, -0.555176, 0.277588, -0.831055, -0.480957, 0, 0.382568, -0.923828, 0.461914, 0.382568, -0.799805, 0, -0.923828, -0.382568, 0.191284, -0.923828, -0.331299, 0, 0.195068, -0.980469, 0.490234, 0.195068, -0.849121, 0, -0.980469, -0.195068, 0.0975342, -0.980469, -0.168945, 0, 0, -1, 0.5, 0, -0.865723, 0, -1, 0, 0.168945, -0.980469, -0.0975342, 0.865723, 0, -0.5, 0.849121, -0.195068, -0.490234, 0.799805, -0.382568, -0.461914, 0.331299, 0.923828, -0.191284, 0.480957, 0.831055, -0.277588, 0.719727, -0.555176, -0.415527, 0.612305, 0.707031, -0.353516, 0.612305, -0.707031, -0.353516, 0.719727, 0.555176, -0.415527, 0.480957, -0.831055, -0.277588, 0.799805, 0.382568, -0.461914, 0.331299, -0.923828, -0.191284, 0.849121, 0.195068, -0.490234, 0.707031, 0.707031, 0, 0.831055, 0.555176, 0, 0.707031, -0.707031, 0, 0.555176, -0.831055, 0, 0.923828, 0.382568, 0, 0.382568, -0.923828, 0, 0.980469, 0.195068, 0, 0.195068, -0.980469, 0, 1, 0, 0, 0.980469, -0.195068, 0, 0.923828, -0.382568, 0, 0.382568, 0.923828, 0, 0.555176, 0.831055, 0, 0.831055, -0.555176, 0, 0.865723, 0, 0.5, 0.849121, -0.195068, 0.490234, 0.799805, -0.382568, 0.461914, 0.331299, 0.923828, 0.191284, 0.480957, 0.831055, 0.277588, 0.719727, -0.555176, 0.415527, 0.612305, 0.707031, 0.353516, 0.612305, -0.707031, 0.353516, 0.719727, 0.555176, 0.415527, 0.480957, -0.831055, 0.277588, 0.799805, 0.382568, 0.461914, 0.331299, -0.923828, 0.191284, 0.849121, 0.195068, 0.490234, 0.168945, -0.980469, 0.0975342, 0.353516, -0.707031, 0.612305, 0.277588, -0.831055, 0.480957, 0.415527, 0.555176, 0.719727, 0.461914, 0.382568, 0.799805, 0.191284, -0.923828, 0.331299, 0.490234, 0.195068, 0.849121, 0.0975342, -0.980469, 0.168945, 0.5, 0, 0.865723, 0.490234, -0.195068, 0.849121, 0.461914, -0.382568, 0.799805, 0.191284, 0.923828, 0.331299, 0.277588, 0.831055, 0.480957, 0.415527, -0.555176, 0.719727, 0.353516, 0.707031, 0.612305, 0, -0.195068, 0.980469, 0, -0.382568, 0.923828, 0, 0.923828, 0.382568, 0, 0.831055, 0.555176, 0, -0.555176, 0.831055, 0, 0.707031, 0.707031, 0, -0.707031, 0.707031, 0, 0.555176, 0.831055, 0, -0.831055, 0.555176, 0, 0.382568, 0.923828, 0, -0.923828, 0.382568, 0, 0.195068, 0.980469, 0, -0.980469, 0.195068, 0, 0, 1, -0.415527, 0.555176, 0.719727, -0.461914, 0.382568, 0.799805, -0.277588, -0.831055, 0.480957, -0.191284, -0.923828, 0.331299, -0.490234, 0.195068, 0.849121, -0.0975342, -0.980469, 0.168945, -0.5, 0, 0.865723, -0.490234, -0.195068, 0.849121, -0.461914, -0.382568, 0.799805, -0.191284, 0.923828, 0.331299, -0.277588, 0.831055, 0.480957, -0.415527, -0.555176, 0.719727, -0.353516, 0.707031, 0.612305, -0.353516, -0.707031, 0.612305, -0.849121, -0.195068, 0.490234, -0.799805, -0.382568, 0.461914, -0.331299, 0.923828, 0.191284, -0.480957, 0.831055, 0.277588, -0.719727, -0.555176, 0.415527, -0.612305, 0.707031, 0.353516, -0.612305, -0.707031, 0.353516, -0.719727, 0.555176, 0.415527, -0.480957, -0.831055, 0.277588, -0.799805, 0.382568, 0.461914, -0.331299, -0.923828, 0.191284, -0.849121, 0.195068, 0.490234, -0.168945, -0.980469, 0.0975342, -0.865723, 0, 0.5, -0.555176, -0.831055, 0, -0.382568, -0.923828, 0, -0.923828, 0.382568, 0, -0.980469, 0.195068, 0, -0.195068, -0.980469, 0, -1, 0, 0, -0.980469, -0.195068, 0, -0.923828, -0.382568, 0, -0.382568, 0.923828, 0, -0.555176, 0.831055, 0, -0.831055, -0.555176, 0, -0.707031, 0.707031, 0, -0.707031, -0.707031, 0, -0.831055, 0.555176, 0, -0.799805, -0.382568, -0.461914, -0.719727, -0.555176, -0.415527, -0.480957, 0.831055, -0.277588, -0.612305, 0.707031, -0.353516, -0.612305, -0.707031, -0.353516, -0.719727, 0.555176, -0.415527, -0.480957, -0.831055, -0.277588, -0.799805, 0.382568, -0.461914, -0.331299, -0.923828, -0.191284, -0.849121, 0.195068, -0.490234, -0.168945, -0.980469, -0.0975342, -0.865723, 0, -0.5, -0.849121, -0.195068, -0.490234, -0.331299, 0.923828, -0.191284, -0.191284, -0.923828, -0.331299, -0.0975342, -0.980469, -0.168945, -0.490234, 0.195068, -0.849121, -0.5, 0, -0.865723, -0.490234, -0.195068, -0.849121, -0.461914, -0.382568, -0.799805, -0.191284, 0.923828, -0.331299, -0.277588, 0.831055, -0.480957, -0.415527, -0.555176, -0.719727, -0.353516, 0.707031, -0.612305, -0.353516, -0.707031, -0.612305, -0.415527, 0.555176, -0.719727, -0.277588, -0.831055, -0.480957, -0.461914, 0.382568, -0.799805, -0.331299, 1.04395, -0.191284, -0.191284, 1.04395, -0.331299, -0.271484, 1.04395, 0.15686, -0.313721, 1.04395, 0, -0.271484, 1.34668, 0.15686, -0.313721, 1.34668, 0, 0, 1.04395, 0.382568, -0.191284, 1.04395, 0.331299, 0, 1.04395, -0.382568, 0.191284, 1.04395, -0.331299, -0.382568, 1.04395, 0, 0.331299, 1.04395, 0.191284, 0.191284, 1.04395, 0.331299, 0.382568, 1.04395, 0, -0.331299, 1.04395, 0.191284, 0.331299, 1.04395, -0.191284, 0.15686, 1.04395, -0.271484, 0, 1.04395, -0.313721, 0.271484, 1.04395, -0.15686, 0.313721, 1.04395, 0, 0.271484, 1.04395, 0.15686, 0.15686, 1.04395, 0.271484, 0, 1.04395, 0.313721, -0.15686, 1.04395, 0.271484, -0.271484, 1.04395, -0.15686, -0.15686, 1.04395, -0.271484, 0.15686, 1.34668, 0.271484, 0, 1.34668, 0.313721, 0.271484, 1.34668, -0.15686, 0.313721, 1.34668, 0, -0.271484, 1.34668, -0.15686, -0.15686, 1.34668, 0.271484, 0.271484, 1.34668, 0.15686, -0.15686, 1.34668, -0.271484, 0, 1.34668, -0.313721, 0.15686, 1.34668, -0.271484, 0.0336304, 1.34668, -0.0582275, 0, 1.34668, -0.0672607, 0.0582275, 1.34668, -0.0336304, 0.0672607, 1.34668, 0, 0.0582275, 1.34668, 0.0336304, 0.0336304, 1.34668, 0.0582275, 0, 1.34668, 0.0672607, -0.0336304, 1.34668, 0.0582275, -0.0582275, 1.34668, 0.0336304, -0.0672607, 1.34668, 0, -0.0582275, 1.34668, -0.0336304, -0.0336304, 1.34668, -0.0582275, 0, 1.34668, -0.0672607, 0.0336304, 1.34668, -0.0582275, 0.000812531, 1.74512, -0.150024, 0.0273743, 1.74707, -0.143433, -0.045166, 1.75488, -0.125366, -0.0257416, 1.74707, -0.143433, -0.00122356, 2.00195, -0.330322, 0.0120239, 1.99023, -0.336182, -0.0336304, 1.34668, 0.0582275, -0.0582275, 1.34668, 0.0336304, -0.0257416, 1.78223, -0.058075, -0.045166, 1.77441, -0.0761108, 0.0582275, 1.34668, 0.0336304, 0.0336304, 1.34668, 0.0582275, 0.046814, 1.77441, -0.0761108, 0.0273743, 1.78223, -0.058075, -0.0336304, 1.34668, -0.0582275, 0.0582275, 1.34668, -0.0336304, 0.046814, 1.75488, -0.125366, -0.0672607, 1.34668, 0, -0.0523071, 1.76465, -0.100769, 0, 1.34668, 0.0672607, 0.000812531, 1.78418, -0.0514832, 0.0672607, 1.34668, 0, 0.0539246, 1.76465, -0.100769, -0.0582275, 1.34668, -0.0336304, 0.0301361, 1.98633, -0.338135, 0.0482178, 1.99023, -0.336182, -0.006073, 2.01758, -0.32251, -0.00122356, 2.03516, -0.314697, 0.0120239, 2.04688, -0.309082, 0.0301361, 2.05078, -0.306885, 0.0482178, 2.04688, -0.309082, 0.0614929, 2.03516, -0.314697, 0.0663452, 2.01758, -0.32251, 0.0614929, 2.00195, -0.330322 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = false
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Emission Shape", "Gravity", "Spread" ]
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.90625, 0.484432, 0.0354004, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo" ]
+
+[sub_resource type="SphereMesh" id=6]
+
+material = SubResource( 5 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 0.2
+height = 0.2
+radial_segments = 64
+rings = 32
+is_hemisphere = false
+
+[node name="bomb" type="Area" index="0" groups=[
+"Bombs",
+]]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="Particles" type="Particles" parent="." index="2"]
+
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.027544, 1.99503, -0.313157 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 100
+lifetime = 0.4
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+draw_passes = 1
+draw_pass_1 = SubResource( 6 )
+_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
+
+

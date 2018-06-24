@@ -25,6 +25,9 @@ func _on_area_entered(area):
 		area.already_hit = true
 		emit_signal("nail_hit")
 		
+	elif area.is_in_group("Bombs"):
+		emit_signal("game_end")
+	
 func check_nail_hit():
 	if !is_nail_hit:
 		emit_signal("game_end")
