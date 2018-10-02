@@ -7,10 +7,7 @@ path="res://.import/playerShip3_green.png-4ef9c1228486ceab8127433e35674603.stex"
 [deps]
 
 source_file="res://assets/sprites/playerShip3_green.png"
-source_md5="74e42a0afc6e91b7227fe572288abf3a"
-
 dest_files=[ "res://.import/playerShip3_green.png-4ef9c1228486ceab8127433e35674603.stex" ]
-dest_md5="1c8f81885784ee8d2583642d1e0617e2"
 
 [params]
 

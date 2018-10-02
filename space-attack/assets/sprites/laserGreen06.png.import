@@ -7,10 +7,7 @@ path="res://.import/laserGreen06.png-8c005bdee7b43ba223041d6c7e348c84.stex"
 [deps]
 
 source_file="res://assets/sprites/laserGreen06.png"
-source_md5="7489a0c092e5a234f21e9d244ebf7e14"
-
 dest_files=[ "res://.import/laserGreen06.png-8c005bdee7b43ba223041d6c7e348c84.stex" ]
-dest_md5="87803bc4c73eeac13b417ec615061da1"
 
 [params]
 

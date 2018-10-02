@@ -7,10 +7,7 @@ path="res://.import/enemyRed5.png-c1c5d15192dab948d6857f4c048038e6.stex"
 [deps]
 
 source_file="res://assets/sprites/enemyRed5.png"
-source_md5="256b726e214834320596f267e6d5ccfe"
-
 dest_files=[ "res://.import/enemyRed5.png-c1c5d15192dab948d6857f4c048038e6.stex" ]
-dest_md5="33c389aee05a272255e39ce203b1b39f"
 
 [params]
 
