@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
@@ -9,9 +9,10 @@
 [ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=9]
-[ext_resource path="res://jungle_dirt_tileset.tres" type="TileSet" id=10]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=10]
+[ext_resource path="res://jungle_dirt_tileset.tres" type="TileSet" id=11]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -28,17 +29,24 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 14, 28 )
+radius = 14.0
+height = 28.0
 
 [node name="world" type="Node" index="0"]
 
 [node name="player" type="KinematicBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 352, 320 )
 input_pickable = false
 collision_layer = 1
@@ -52,19 +60,19 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="player" index="0"]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" index="1"]
 
 position = Vector2( 0, 4 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 10 )
+tile_set = ExtResource( 11 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
