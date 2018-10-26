@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 14.0
+height = 28.0
+
+[node name="player" type="KinematicBody2D"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

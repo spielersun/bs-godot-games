@@ -1,78 +1,19 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=10]
-[ext_resource path="res://jungle_dirt_tileset.tres" type="TileSet" id=11]
+[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://jungle_dirt_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://changeLevel.tscn" type="PackedScene" id=3]
 
-[sub_resource type="SpriteFrames" id=1]
+[node name="world" type="Node"]
 
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-} ]
+[node name="player" parent="." index="0" instance=ExtResource( 1 )]
 
-[sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 14.0
-height = 28.0
-
-[node name="world" type="Node" index="0"]
-
-[node name="player" type="KinematicBody2D" parent="." index="0"]
-
-editor/display_folded = true
-position = Vector2( 352, 320 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="player" index="0"]
-
-frames = SubResource( 1 )
-animation = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" index="1"]
-
-position = Vector2( 0, 4 )
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 160, 384 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 11 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -87,10 +28,15 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 655380, 0, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 2, 0, 720916, 6, 0, 720917, 7, 0, 720918, 7, 0, 720919, 7, 0, 720920, 7, 0, 720921, 7, 0, 720922, 7, 0, 720923, 7, 0, 720924, 7, 0, 720925, 8, 0, 851971, 0, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 2, 0, 917507, 3, 0, 917508, 4, 0, 917509, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 4, 0, 917522, 4, 0, 917523, 5, 0, 983043, 6, 0, 983044, 7, 0, 983045, 7, 0, 983046, 7, 0, 983047, 7, 0, 983048, 7, 0, 983049, 7, 0, 983050, 7, 0, 983051, 7, 0, 983052, 7, 0, 983053, 7, 0, 983054, 7, 0, 983055, 7, 0, 983056, 7, 0, 983057, 7, 0, 983058, 7, 0, 983059, 8, 0 )
+tile_data = PoolIntArray( 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 2, 0, 327681, 3, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 5, 0, 393217, 6, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 8, 0, 458761, 0, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 2, 0, 524297, 6, 0, 524298, 7, 0, 524299, 7, 0, 524300, 7, 0, 524301, 7, 0, 524302, 7, 0, 524303, 7, 0, 524304, 7, 0, 524305, 8, 0, 655380, 0, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 2, 0, 720916, 6, 0, 720917, 7, 0, 720918, 7, 0, 720919, 7, 0, 720920, 7, 0, 720921, 7, 0, 720922, 7, 0, 720923, 7, 0, 720924, 7, 0, 720925, 8, 0, 851971, 0, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 2, 0, 917507, 3, 0, 917508, 4, 0, 917509, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 4, 0, 917522, 4, 0, 917523, 5, 0, 983043, 6, 0, 983044, 7, 0, 983045, 7, 0, 983046, 7, 0, 983047, 7, 0, 983048, 7, 0, 983049, 7, 0, 983050, 7, 0, 983051, 7, 0, 983052, 7, 0, 983053, 7, 0, 983054, 7, 0, 983055, 7, 0, 983056, 7, 0, 983057, 7, 0, 983058, 7, 0, 983059, 8, 0 )
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="changeLevel" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 64, 96 )
+level_name = "res://world2.tscn"
 
 
