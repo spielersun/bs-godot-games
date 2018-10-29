@@ -3,13 +3,13 @@
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -25,15 +25,15 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -42,7 +42,7 @@ custom_solver_bias = 0.0
 radius = 14.0
 height = 28.0
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -93,6 +93,7 @@ _sections_unfolded = [ "Smoothing" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -116,6 +117,6 @@ _sections_unfolded = [ "Motion", "Transform", "Z Index" ]
 
 texture = ExtResource( 11 )
 centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
 
 
