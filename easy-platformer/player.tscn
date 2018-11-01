@@ -1,16 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/todd/idle_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/todd/jump_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/todd/jump_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/todd/run_1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/todd/run_2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/todd/run_3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,24 +20,23 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "jump",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 14.0
-height = 28.0
+extents = Vector2( 8.98937, 5.66215 )
 
 [node name="player" type="KinematicBody2D"]
 
@@ -50,9 +46,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -61,12 +54,14 @@ animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0, 4 )
+position = Vector2( 0, 9 )
+scale = Vector2( 3, 4 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
+position = Vector2( 0, 2 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -93,7 +88,6 @@ _sections_unfolded = [ "Smoothing" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -115,7 +109,7 @@ _sections_unfolded = [ "Motion", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
