@@ -5,10 +5,13 @@
 these mini games are created with godot3
 
 <ul>
-<li>Number Guesser - Text</li>
-<li>Tree Puncher - 2D</li>
-<li>Space Attack - 2D</li>
-<li>Platform Jumper - 2D</li>
+<li>Number Guesser - Text Test</li>
+<li>Tree Puncher - 2D | Vertical Endless Test </li>
+<li>Space Attack - 2D | Vertical Endless Test</li>
+<li>Platform Jump - 2D | Leveled Platform Test</li>
+<li>Ghost Effect - 2D | Trail Effect Test</li>
+<li>Easy Platformer - 2D | Platform Test</li>
+<li>Kings Run - 2D | Object Movement Test</li>
 <li>Hammer Time - 3D</li>
 </ul>
 ___
